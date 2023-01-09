@@ -1,3 +1,15 @@
+:root {
+  --bgc-light: hsl(152, 81%, 96%);
+  --bgc-gray: hsl(215, 30%, 22%);
+  --bgc-green: hsl(160, 84%, 39%);
+  --bgc-green-2: hsla(161, 94%, 30%, 1);
+  --clr-green: hsla(144, 70%, 58%, 1);
+  --clr-green-2: hsla(142, 82%, 65%, 1);
+  --clr-gray: hsl(220, 9%, 46%);
+  --clr-gray-2: hsla(255, 5%, 84%, 1);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
 *,
 :after,
 :before {
@@ -8,6 +20,115 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Karla', Arial, sans-serif;
-  color: #ECFDF5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, Karla, Arial, sans-serif;
+  background-color: var(--bgc-light);
+  font-size: 16px;
+}
+
+.main {
+  width: 100%;
+  max-width: 550px;
+  padding: 0 50px;
+}
+
+.title {
+  font-family: Karla;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  color: inherit;
+  letter-spacing: -0.025em;
+}
+
+.main__title {
+  margin-bottom: 10px;
+}
+
+.title__span {
+  color: var(--clr-green);
+}
+
+.text {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--clr-gray);
+}
+
+.main__text {
+  margin-bottom: 50px;
+}
+
+.generate-btn {
+  padding: 9px 15px 7px;
+  min-width: 190px;
+  min-height: 42px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--clr-white);
+  background-color: var(--bgc-green);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.generate-btn:hover,
+.generate-btn:active {
+  background-color: var(--bgc-green-2);
+}
+
+.main__btn {
+  margin-bottom: 35px;
+}
+
+.main__results {
+  padding-top: 35px;
+  border-top: 1px solid var(--clr-gray-2);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 550px) {
+  .results {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.results__field {
+  width: 210px;
+  height: 40px;
+  color: var(--clr-green-2);
+  background-color: var(--bgc-gray);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.results__field:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 550px) {
+  .results__field:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
